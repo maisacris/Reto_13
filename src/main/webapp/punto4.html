@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Punto 4</title>
+</head>
+<body>
+<form action="RaizCuadrada" method="get">
+    Ingrese un numero:
+    <input type="text" name="digito" id="digito" required pattern="[0-9]+">
+    <input type="submit" name="enviar" value="enviar" >
+</form>
+
+<script>
+    document.addEventListener("DOMContentLoaded",function(){
+        document.getElementById("formulario").addEventListener('submit',revisionForm)
+    });
+
+    function revisionForm(ingreso){
+        ingreso.preventDefault();
+        var digito = document.getElementById("digito").value;
+        if(digito.length == 0){
+            alert("no ingresaste un numero, favor ingresa uno");
+            return;
+        }
+        this.submit();
+    }
+</script>
+</body>
+</html>
